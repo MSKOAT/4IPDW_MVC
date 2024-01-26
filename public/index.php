@@ -36,8 +36,7 @@ include_mvc_php_files();
 // select page to load, ie. function to launch
 $page = @$_GET['page'] ?: 'home';
 $main = "main_{$page}";
-$main();
+echo $main();
 
 //launch($page);
-// http://4ipdwmvc/?page=login&action=login : lien pour le login
 

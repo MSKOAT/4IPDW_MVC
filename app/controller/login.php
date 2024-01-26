@@ -44,15 +44,20 @@ function main_login()
 		$msg .= html_unidentified_user();
 	}
 
-	html_head();
-	html_open_form();
+    $menu_a = get_menu_contents();
 
-	echo $msg;
+    return join( "\n", [
+		html_head($menu_a),
+		html_open_form(),
 
-	html_link_home();
+		$msg,
 
-	html_close_form();
-	html_foot();
+		html_link_home(),
+
+		html_close_form(),
+		html_foot()
+	]);
+
 }
 
 ?>

@@ -26,13 +26,17 @@ function get_identification()
 function main_home()
 {
 	list( $user, $role, $login_display ) = get_identification();
+    $menu_a = get_menu_contents();
 
-	html_head();
+	return join( "\n", [
+		html_head($menu_a),
 
-	html_body($user, $role);
+		html_body($user, $role),
 
-	$login_display ? html_login_button() : html_logout_button();
+		$login_display ? html_login_button() : html_logout_button(),
 
-	html_foot();
+		html_foot(),
+	]);
+
 }
 

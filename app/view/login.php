@@ -5,6 +5,7 @@
  */
 function html_logout_button()
 {
+	ob_start();
 	?>
     <a href="?page=login&action=logout">log out</a>
     <!--<button type="submit" name="logout">log out</button>-->
@@ -13,6 +14,7 @@ function html_logout_button()
 	<a href="?action=logout">log out</a>
 	-->
 	<?php
+	return ob_get_clean();
 }
 
 /**
@@ -20,9 +22,11 @@ function html_logout_button()
  */
 function html_login_button($user="inconnu")
 {
+	ob_start();
 	?>
     <a href="?page=login&action=login">log in</a>
     <?php
+	return ob_get_clean();
 }
 
 /**
@@ -30,9 +34,11 @@ function html_login_button($user="inconnu")
  */
 function html_open_form()
 {
+	ob_start();
 	?>
     <form method="post">
 	<?php
+	return ob_get_clean();
 }
 
 /**
@@ -40,9 +46,11 @@ function html_open_form()
  */
 function html_close_form()
 {
+	ob_start();
 	?>
     </form>
 	<?php
+	return ob_get_clean();
 }
 
 /**
@@ -59,11 +67,13 @@ function html_unidentified_user()
 
 function html_link_home()
 {
+	ob_start();
 	?>
     <p>
         <a href=".">go to HOME</a>
     </p>
 	<?php
+	return ob_get_clean();
 }
 
 ?>
