@@ -8,7 +8,7 @@
 function get_catalogue_contents()
 {
     // paramètres
-    $fileName = '../asset/voo_database.csv';
+    $fileName = '../asset/database/voo_database.csv';
     $sep = "|";
     $product_a = [];
 

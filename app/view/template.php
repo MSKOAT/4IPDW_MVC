@@ -8,7 +8,8 @@ function html_head($menu_a=[])
 	<html lang="fr">
 	<head>
 		<title>exercice login/logout en MVC</title>
-        <link rel="stylesheet" href="asset/css/main.css" />
+        <link rel="stylesheet" href="bootstrap.css" />  <!-- lib externe -->
+        <link rel="stylesheet" href="asset/css/main.css" /> <!-- lib interne / perso -->
 	</head>
 	<body>
     <h1>

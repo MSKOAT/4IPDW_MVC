@@ -3,7 +3,7 @@
 function get_menu_contents()
 {
     // paramètres
-    $fileName = '../asset/menu.csv';
+    $fileName = '../asset/database/menu.csv';
     $sep = "|";
     $menu_a = [];
 

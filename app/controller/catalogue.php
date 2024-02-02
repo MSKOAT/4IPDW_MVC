@@ -2,7 +2,6 @@
 
 function main_catalogue()
 {
-
     // étape 1 : lire les données du catalogue
     $catalogue_a = get_catalogue_contents();
 
@@ -12,10 +11,9 @@ function main_catalogue()
     // étape 3 : tout mettre en musique
     $catalogue_header = html_catalogue_header();
     $catalogue_footer = html_catalogue_footer();
-    $menu_a = get_menu_contents();
 
     return join( "\n", [
-        html_head($menu_a),
+        ctrl_head(),
         $catalogue_header,
         $catalogue_html,
         $catalogue_footer,

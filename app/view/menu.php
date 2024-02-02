@@ -9,9 +9,10 @@ function html_menu($data_a)
     {
         $title = $menu_item[0];
         $component = $menu_item[1];
+        $subcomponent = $menu_item[2];
         $url = <<< HTML
             <li>
-                <a href="?page=$component">$title</a>            
+                <a href="?page=$component&subpage=$subcomponent">$title</a>            
             </li>
 HTML;
         $out .= $url;

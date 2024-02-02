@@ -52,6 +52,18 @@ div.produit
     /* overflow-y:scroll;  */
 }
 
+div.breaking
+{
+    background-color:white;
+    border:blue 2px solid;
+    width:10cm;
+    height:7cm;
+    float:left;
+    margin:1mm;
+    padding:1mm;
+    /* overflow-y:scroll;  */
+}
+
 div.produit div.formule
 {
     font-weight:bold;
@@ -90,7 +102,7 @@ div.recap td
     background-color:whitesmoke;
     margin:0px;
     padding:2px;
-    border: 1px 0;
+    border-width: 1px 0;
     border-color:blue;
 }
 

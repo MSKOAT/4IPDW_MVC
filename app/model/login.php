@@ -11,7 +11,7 @@ function login_validate($input)
 	try
 	{
 		// lecture fichier
-		$fh = fopen( '../asset/login2.csv', 'r' );
+		$fh = fopen( '../asset/database/login2.csv', 'r' );
 		while( ! feof($fh) )
 		{
 			$ligne = fgets($fh);

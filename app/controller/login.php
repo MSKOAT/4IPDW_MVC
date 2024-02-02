@@ -44,16 +44,11 @@ function main_login()
 		$msg .= html_unidentified_user();
 	}
 
-    $menu_a = get_menu_contents();
-
     return join( "\n", [
-		html_head($menu_a),
+		ctrl_head(),
 		html_open_form(),
-
 		$msg,
-
 		html_link_home(),
-
 		html_close_form(),
 		html_foot()
 	]);
