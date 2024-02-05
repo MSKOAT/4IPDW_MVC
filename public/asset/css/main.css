@@ -52,16 +52,53 @@ div.produit
     /* overflow-y:scroll;  */
 }
 
-div.breaking
+main article.main_article
+{
+    background-color:white;
+    border:green 2px solid;
+    width:20cm;
+    margin:auto;
+    padding:1mm;
+}
+
+main article.main_article img
+{
+    width:100%;
+}
+
+
+article.breaking
 {
     background-color:white;
     border:blue 2px solid;
     width:10cm;
-    height:7cm;
+    /*height:7cm;*/
     float:left;
     margin:1mm;
     padding:1mm;
     /* overflow-y:scroll;  */
+}
+
+article.breaking img
+{
+    width:100%;
+}
+
+aside
+{
+    float:right;
+    width:10cm;
+    margin:1mm;
+    padding:1mm;
+}
+
+article.side
+{
+    background-color:white;
+    border:blue 2px solid;
+    width:100%;
+    margin:1mm;
+    padding:1mm;
 }
 
 div.produit div.formule
@@ -121,3 +158,9 @@ div.recap td.prix
     font-family: Courier, proportional ;
     text-align: right;
 }
+
+hr
+{
+    clear: both;
+}
+

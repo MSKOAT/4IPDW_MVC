@@ -59,7 +59,7 @@ $article0_a = [
 ];
 
 $article1_a = [
-    'id'    => 0,
+    'id'    => 1,
     'title' => <<< HTML
         L'heure est à l'apaisement: après la réunion avec les ministres, les syndicats agricoles veulent "donner une chance à la discussion"
     HTML,
@@ -113,7 +113,7 @@ $article1_a = [
 ];
 
 $article2_a = [
-    'id'    => 0,
+    'id'    => 2,
     'title' => <<< HTML
         Une centaine de stations-services à sec dans le Hainaut: peut-on s'attendre à ce qu'elles soient remplies dans les prochaines heures?
     HTML,
@@ -167,7 +167,7 @@ $article2_a = [
 ];
 
 $article3_a = [
-    'id'    => 0,
+    'id'    => 3,
     'title' => <<< HTML
         La maman de Lina, disparue depuis septembre, s'exprime pour la première fois: "Garder espoir, la seule chose à faire"
     HTML,
@@ -221,7 +221,7 @@ $article3_a = [
 ];
 
 $article4_a = [
-    'id'    => 0,
+    'id'    => 4,
     'title' => <<< HTML
         Hugo, camionneur, a été bloqué durant 5 jours à cause des manifestations agricoles: "Je me sentais un peu comme un otage"
     HTML,
@@ -281,3 +281,4 @@ $news_a = [
     $article3_a,
     $article4_a,
 ];
+
