@@ -28,23 +28,41 @@ function html_breaking_article($art)
 HTML;
 }
 
-function html_side_article($art_a)
+function html_side_article($art_a, $fav_a)
 {
     $html_s = <<< HTML
         <aside>
 HTML;
     foreach( $art_a as $art)
     {
+        if( in_array( $art['id'], $fav_a) )
+        {
+            // article déjà favori => fct "enlever"
+            $button_html = <<< HTML
+                    <button type="submit" name="del_favorite">
+                        retirer du panier                    
+                    </button>
+            HTML;
+        }
+        else
+        {
+            // article non favori => fct "ajouter"
+            $button_html = <<< HTML
+                    <button type="submit" name="add_favorite">
+                        ajouter au panier                    
+                    </button>
+            HTML;
+        }
         $html_s .= <<< HTML
             <article class="side">
                 <a href="?page=article&id={$art['id']}">
                     <h4>{$art['title']}</h4>
                 </a>    
-                <form action="?page=press" method="get">
-                    <button type="submit">
-                        ajouter au panier                    
-                    </button>
-                </form>        
+                <form method="get">
+                    <input type="hidden" name="page" value="press">
+                    <input type="hidden" name="art_id" value="{$art['id']}">
+                    $button_html   
+                </form>
             </article>
 HTML;
     }
