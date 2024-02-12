@@ -2,12 +2,12 @@
 
 function html_head($menu_a=[])
 {
-    $debug = false;
+    $debug = true;
 	ob_start();
 	?>
 	<html lang="fr">
 	<head>
-		<title>exercice login/logout en MVC</title>
+		<title>Press MVC</title>
         <link rel="stylesheet" href="bootstrap.css" />  <!-- lib externe -->
         <link rel="stylesheet" href="asset/css/main.css" /> <!-- lib interne / perso -->
 	</head>
@@ -21,6 +21,8 @@ function html_head($menu_a=[])
 	if($debug)
 	{
 		var_dump($_SESSION);
+        var_dump($_GET);
+        var_dump($_POST);
 	}
 	return ob_get_clean();
 }
