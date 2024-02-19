@@ -20,9 +20,10 @@ function html_head($menu_a=[])
 
 	if($debug)
 	{
-		var_dump($_SESSION);
+        var_dump($_COOKIE);
+		// var_dump($_SESSION);
         var_dump($_GET);
-        var_dump($_POST);
+        //        var_dump($_POST);
 	}
 	return ob_get_clean();
 }

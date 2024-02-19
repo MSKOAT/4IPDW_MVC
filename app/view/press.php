@@ -28,10 +28,10 @@ function html_breaking_article($art)
 HTML;
 }
 
-function html_side_article($art_a, $fav_a)
+function html_listing_article($art_a, $fav_a, $root_tag='aside', $next_page="press")
 {
     $html_s = <<< HTML
-        <aside>
+        <$root_tag>
 HTML;
     foreach( $art_a as $art)
     {
@@ -59,7 +59,7 @@ HTML;
                     <h4>{$art['title']}</h4>
                 </a>    
                 <form method="get">
-                    <input type="hidden" name="page" value="press">
+                    <input type="hidden" name="page" value="$next_page">
                     <input type="hidden" name="art_id" value="{$art['id']}">
                     $button_html   
                 </form>
@@ -67,7 +67,7 @@ HTML;
 HTML;
     }
     $html_s .= <<< HTML
-        </aside>
+        </$root_tag>
 HTML;
     return $html_s;
 }

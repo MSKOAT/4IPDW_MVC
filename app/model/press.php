@@ -13,6 +13,29 @@ function get_breaking_article()
     }
 }
 
+
+/**
+ * retourne tous les données des articles favoris
+ * @return array
+ */
+function get_fav_article($fav_l)
+{
+    require "../asset/database/news.php";
+
+    $outart_a = [];
+    foreach( $news_a as $news )
+    {
+        if( in_array( $news['id'], $fav_l ) )
+        {
+            echo "news id : ".$news['id']."<br>";
+            var_dump($fav_l);
+            $outart_a[] = $news;
+        }
+    }
+    return $outart_a;
+}
+
+
 function get_side_article()
 {
     require "../asset/database/news.php";

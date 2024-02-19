@@ -4,7 +4,7 @@
  */
 
 $article0_a = [
-    'id'    => 0,
+    'id'    => 999,
     'title' => <<< HTML
         Panier RTL info/Test Achats: l'inflation poursuit sa courbe descendante, 
         mais le prix de certains produits augmente fortement

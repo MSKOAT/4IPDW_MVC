@@ -1,27 +1,45 @@
 <?php
 
-function main_press()
-{
-    // unset($_SESSION['favorite']);
 
-    // traitement éventuel des favoris
-    if(empty($_SESSION['favorite'])) $_SESSION['favorite'] = array();
+/**
+ * traiter (GET...) et retourner la liste de favoris
+ * @return array
+ */
+function ctrl_process_fav_form()
+{
+    $sep = '|';
+    $fav_s = $_COOKIE['favorite'] ?? "";
+    $fav_l = explode( $sep, $fav_s);
+    //    if(empty($_SESSION['favorite'])) $_SESSION['favorite'] = array();
     if(isset($_GET['add_favorite']))
     {
         // on ajoute un article aux favoris
-        $_SESSION['favorite'][] = $_GET["art_id"];
+        //        $_SESSION['favorite'][] = $_GET["art_id"];
+        $fav_l[] = $_GET["art_id"];
     }
     elseif (isset($_GET['del_favorite']))
     {
-        foreach( $_SESSION['favorite'] as $i =>  $fav )
+        // foreach( $_SESSION['favorite'] as $i =>  $fav )
+        foreach( $fav_l as $i =>  $fav )
         {
             if( $fav == $_GET["art_id"] )
             {
-                unset($_SESSION['favorite'][$i]);
+                // unset($_SESSION['favorite'][$i]);
+                unset($fav_l[$i]);
             }
         }
     }
-    $_SESSION['favorite'] = array_unique($_SESSION['favorite']);
+    // $_SESSION['favorite'] = array_unique($_SESSION['favorite']);
+    $fav_l = array_unique($fav_l);
+    $fav_s = implode( $sep, $fav_l);
+    setcookie('favorite', $fav_s, time()+3600*24*30 );
+    return $fav_l;
+}
+
+function main_press()
+{
+    // traitement éventuel des favoris
+    $fav_l = ctrl_process_fav_form();
 
     // étape 2 : breaking news
     $breaking_art = get_breaking_article();
@@ -29,7 +47,7 @@ function main_press()
 
     // étape 3 : articles sur le côté
     $side_art = get_side_article();
-    $side_art_html = html_side_article($side_art, $_SESSION['favorite']);
+    $side_art_html = html_listing_article($side_art, $fav_l);
 
     return join( "\n", [
         ctrl_head(),
