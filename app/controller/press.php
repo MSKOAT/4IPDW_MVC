@@ -41,6 +41,13 @@ function main_press()
     // traitement éventuel des favoris
     $fav_l = ctrl_process_fav_form();
 
+    // traitement du thème
+    // $_SESSION['theme'] = $_SESSION['theme'] ?? 'default';
+    if(isset($_POST['b_select_theme']))
+    {
+        $_SESSION['theme'] = $_POST['theme'];
+    }
+
     // étape 2 : breaking news
     $breaking_art = get_breaking_article();
     $breaking_art_html = html_breaking_article($breaking_art);

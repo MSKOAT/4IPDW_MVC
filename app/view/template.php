@@ -1,8 +1,26 @@
 <?php
 
-function html_head($menu_a=[])
+function html_select_theme()
 {
-    $debug = true;
+    ob_start();
+    ?>
+    <form method="post">
+        <label>Choisissez votre theme</label>
+        <select name="theme">
+            <option value="default" selected>Sable</option>
+            <option value="sky">Ciel</option>
+        </select>
+        <button name="b_select_theme">Envoyer</button>
+    </form>
+    <?php
+    return ob_get_clean();
+}
+
+
+function html_head($menu_a=[], $theme="default")
+{
+    $debug = false;
+    $theme_fn = "theme_{$theme}.css";
 	ob_start();
 	?>
 	<html lang="fr">
@@ -10,6 +28,7 @@ function html_head($menu_a=[])
 		<title>Press MVC</title>
         <link rel="stylesheet" href="bootstrap.css" />  <!-- lib externe -->
         <link rel="stylesheet" href="asset/css/main.css" /> <!-- lib interne / perso -->
+        <link rel="stylesheet" href="asset/css/<?=$theme_fn?>" /> <!-- custom CSS -->
 	</head>
 	<body>
     <h1>

@@ -16,8 +16,11 @@ function html_image($id)
 
 function html_breaking_article($art)
 {
+    $html_theme_form = html_select_theme();
+
     $image_html = html_image($art['id']);
     return <<< HTML
+        $html_theme_form
         <article class="breaking">
             <a href="?page=article&id={$art['id']}">
                 $image_html
