@@ -32,7 +32,8 @@ function html_head($menu_a=[], $theme="default")
 	</head>
 	<body>
     <h1>
-        Site Test en MVC
+        France 24 (MVC)
+        <img src="./asset/media_general/icon3.png">
     </h1>
 	<?php
     echo html_menu($menu_a);
